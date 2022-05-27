@@ -109,7 +109,7 @@ def load_locations():
     global locations
     with open('locations.json') as d:
         try:
-            locations = json.load(d)
+            locations = [ Location(**x) for x in json.load(d) ]
         except:
             print('json load fail')
             sys.exit(0)
