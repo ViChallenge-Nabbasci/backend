@@ -1,6 +1,5 @@
 from audioop import add
 from unicodedata import category
-
 import uvicorn
 from fastapi import FastAPI, Request
 from pydantic import BaseModel, Field
@@ -9,25 +8,24 @@ import datetime
 import enum
 import json
 import pickle
-import pandas as pd
 import sys
-from location import *
-from itinerary import *
+import location
+import itinerary
 
 app = FastAPI()
 
-class User(BaseModel):    
+class User(BaseModel):
     username: str
     email: str
-    preferences: list[Category]
+    preferences: list[location.Category]
 
 users = [
-    User(username="flanny", email="a@b.org", preferences=[Category.MUSEUM, Category.RESTORATION]),
-    User(username="chrg127", email="c@d.org", preferences=[Category.RESTORATION, Category.TREKKING]),
-    User(username="federaffo00", email="e@f.org", preferences=[Category.MUSEUM]),
+    User(username="flanny", email="a@b.org", preferences=[location.Category.MUSEUM, location.Category.RESTORATION]),
+    User(username="chrg127", email="c@d.org", preferences=[location.Category.RESTORATION, location.Category.TREKKING]),
+    User(username="federaffo00", email="e@f.org", preferences=[location.Category.MUSEUM]),
 ]
 
-current_user = User(username="flanny", email="a@b.org", preferences=[Category.MUSEUM, Category.RESTORATION])
+current_user = User(username="flanny", email="a@b.org", preferences=[location.Category.MUSEUM, location.Category.RESTORATION])
 
 
 
@@ -60,7 +58,7 @@ async def get_user(req: LikeRequest):
 
 
 @app.post("/getItinerary")
-async def get_itinerary(req: Preferences):
+async def get_itinerary(req: itinerary.Preferences):
     return make_itinerary(req)
 
 
@@ -68,6 +66,7 @@ async def get_itinerary(req: Preferences):
 if __name__ == "__main__":
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
-    load_likes()
-    load_locations()
+    location.load_likes()
+    location.load_locations()
+    print(location.locations)
     uvicorn.run("test:app", host=local_ip, port=8080, log_level="info")
