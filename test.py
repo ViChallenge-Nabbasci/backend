@@ -9,6 +9,7 @@ import enum
 import json
 import pickle
 import pandas as pd
+import sys
 
 app = FastAPI()
 
@@ -16,12 +17,24 @@ app = FastAPI()
 
 
 class Category(enum.Enum):
-    RESTORATION = enum.auto
-    MUSEUM = enum.auto
-    TREKKING = enum.auto
-    PIAZZE = enum.auto
-    CHIESE = enum.auto
-    PARCHI = enum.auto
+    RESTORATION = "restoration"
+    THEATER = "theater"
+    TREKKING = "trekking"
+    BIKE = "bike"
+    MUSEUM = "museum"
+
+class Location(BaseModel):
+    id: int
+    name: str
+    opening_times: list[datetime.time]
+    closing_times: list[datetime.time]
+    phone: str
+    price: int
+    durata: int
+    address: str
+    notes: str
+    category: Category
+    outside: bool
 
 
 
@@ -42,20 +55,6 @@ users = [
     User(username="federaffo00", email="e@f.org", preferences=[Category.MUSEUM]),
 ]
 
-class Location(BaseModel):
-    id: int
-    name: str
-    address: str
-    # lat: float
-    # long: float
-    opening_times: list[datetime.time]
-    closing_times: list[datetime.time]
-    categories: list[Category]
-
-locations = [
-    Location(id=0, name="struttura", address="da qualche parte", opening_times=[], closing_times=[], categories=[Category.MUSEUM])
-]
-
 
 
 
@@ -65,13 +64,7 @@ def _find_next_id():
 
 
 
-
-
 # add like
-
-likes = {
-    
-}
 
 class LikeRequest(BaseModel):
     email: str
@@ -95,6 +88,11 @@ async def get_user(req: LikeRequest):
     save_likes()
     return {"response": "like processed"}
 
+
+
+locations = {}
+likes = {}
+
 def save_likes():
     with open('likes.json', 'w') as fp:
         json.dump(likes, fp)
@@ -107,14 +105,25 @@ def load_likes():
         except:
             likes = {}
 
+def load_locations():
+    global locations
+    with open('locations.json') as d:
+        try:
+            locations = json.load(d)
+        except:
+            print('json load fail')
+            sys.exit(0)
 
 
 
 
 
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
-load_likes()
+
+
 if __name__ == "__main__":
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+    load_likes()
+    load_locations()
     uvicorn.run("test:app", host=local_ip, port=8080, log_level="info")
     
