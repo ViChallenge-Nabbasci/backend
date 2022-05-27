@@ -1,5 +1,7 @@
 from audioop import add
 from unicodedata import category
+
+from matplotlib.style import use
 import uvicorn
 from fastapi import FastAPI, Request
 from pydantic import BaseModel, Field
@@ -10,39 +12,10 @@ import json
 import pickle
 import pandas as pd
 import sys
+from location import *
+from itinerary import *
 
 app = FastAPI()
-
-
-
-
-class Category(enum.Enum):
-    RESTORATION = "restoration"
-    THEATER = "theater"
-    TREKKING = "trekking"
-    BIKE = "bike"
-    MUSEUM = "museum"
-
-class Location(BaseModel):
-    id: int
-    name: str
-    opening_times: list[datetime.time]
-    closing_times: list[datetime.time]
-    phone: str
-    price: int
-    durata: int
-    address: str
-    notes: str
-    category: Category
-    outside: bool
-
-
-
-
-
-
-
-
 
 class User(BaseModel):    
     username: str
@@ -55,11 +28,7 @@ users = [
     User(username="federaffo00", email="e@f.org", preferences=[Category.MUSEUM]),
 ]
 
-
-
-
-def _find_next_id():
-    return max(Location.id for us in locations) + 1
+current_user = User(username="flanny", email="a@b.org", preferences=[Category.MUSEUM, Category.RESTORATION])
 
 
 
@@ -90,33 +59,9 @@ async def get_user(req: LikeRequest):
 
 
 
-locations = {}
-likes = {}
-
-def save_likes():
-    with open('likes.json', 'w') as fp:
-        json.dump(likes, fp)
-
-def load_likes():
-    global likes
-    with open('likes.json') as d:
-        try:
-            likes = json.load(d)
-        except:
-            likes = {}
-
-def load_locations():
-    global locations
-    with open('locations.json') as d:
-        try:
-            locations = [ Location(**x) for x in json.load(d) ]
-        except:
-            print('json load fail')
-            sys.exit(0)
-
-
-
-
+@app.post("/getItinerary")
+async def get_itinerary(req: Preferences):
+    return make_itinerary(req)
 
 
 
@@ -126,4 +71,3 @@ if __name__ == "__main__":
     load_likes()
     load_locations()
     uvicorn.run("test:app", host=local_ip, port=8080, log_level="info")
-    

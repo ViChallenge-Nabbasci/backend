@@ -1,7 +1,7 @@
-name,lun,mar,mer,gio,ven,sab,dom,phone,price,durata,ind,note,categoria
-Villaggio Preistorico del Monte Corgnon,10-19,10-19,10-19,10-19,10-19,10-19,10-19,0424407264,4,1,,,museo
-Museo Civico Giuseppe Zannato,,,,,,15–18,15–18,0444492565,3,1,,,museo
-Museo Archeologico dell’Alto Vicentino,,,,,,,15-18,0445649570,0,1,,,museo
-Museo Archeologico dei Sette Comuni,10-16,10-16,10-16,10-16,10-16,10-16,10-16,3516889103,8,2,,,museo
-Castello Inferiore e Museo dei Costumi della partita a scacchi,9-18,9-18,9-18,9-18,9-18,9-18,9-18,042472127,8,2,,,museo
-Covolo del Butistone e Museo,9-18,9-18,9-18,9-18,9-18,9-18,9-18,3388308984,5,2,,,museo
+name,lun,mar,mer,gio,ven,sab,dom,phone,price,durata,ind,note,categoria,outside,withPet
+Villaggio Preistorico del Monte Corgnon,10-19,10-19,10-19,10-19,10-19,10-19,10-19,0424407264,4,1,,,museo,true,true
+Museo Civico Giuseppe Zannato,,,,,,15–18,15–18,0444492565,3,1,,,museo,true,true
+Museo Archeologico dell’Alto Vicentino,,,,,,,15-18,0445649570,0,1,,,museo,false,false
+Museo Archeologico dei Sette Comuni,10-16,10-16,10-16,10-16,10-16,10-16,10-16,3516889103,8,2,,,museo,false,false
+Castello Inferiore e Museo dei Costumi della partita a scacchi,9-18,9-18,9-18,9-18,9-18,9-18,9-18,042472127,8,2,,,museo,false,false
+Covolo del Butistone e Museo,9-18,9-18,9-18,9-18,9-18,9-18,9-18,3388308984,5,2,,,museo,false,false
