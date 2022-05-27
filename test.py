@@ -1,7 +1,6 @@
 from audioop import add
 from unicodedata import category
 
-from matplotlib.style import use
 import uvicorn
 from fastapi import FastAPI, Request
 from pydantic import BaseModel, Field
@@ -29,6 +28,7 @@ users = [
 ]
 
 current_user = User(username="flanny", email="a@b.org", preferences=[Category.MUSEUM, Category.RESTORATION])
+
 
 
 
