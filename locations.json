@@ -362,4 +362,25 @@
          "ages": [ 0, 90 ],
          "img": "https://i0.wp.com/venetoforkids.it/wp-content/uploads/2015/03/20140831_131911.jpg"
      }
+     ,
+     {
+         "id": 17,
+         "name": "Viceramica: mostra mercato in Piazza dei Signori",
+         "opening_times": [
+             "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00"
+         ],
+         "closing_times": [
+            "23:30:00", "23:30:00", "23:30:00", "23:30:00","23:30:00","23:30:00","23:30:00"
+         ],
+         "phone": "0424592513",
+         "price": 0,
+         "durata": 1,
+         "address": "Piazza dei Signori vicenza",
+         "notes": "",
+         "category": "park",
+         "outside": true,
+         "with_pets": true,
+         "ages": [ 0, 90 ],
+         "img": "https://www.comune.vicenza.it/fotonot/inot-315092.jpg"
+     }
 ]
