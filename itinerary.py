@@ -23,13 +23,30 @@ class Itinerary(BaseModel):
     dinner: list[location.Location]
     night: list[location.Location]
 
+def full_score_of(loc):
+    weights = {
+        "age"       : 0.25,
+        "distance"  : 0.25,
+        "rain"      : 0.5,
+        "likes"     : 0.5
+    }
+    def calc_age(user_age, lowest, highest):
+        if user_age >= lowest and user_age <= highest:
+            return 1.0
+        diff = min(lowest - user_age, user_age - highest)
+        return (1.0 - (diff / 100.0)) * weights["age"]
+    def calc_likes(id):
+        return location.all_likes_for(id) / location.all_likes() * weights["likes"]
+    def calc_weather(id):
+        return 0
+    return calc_age(users.current_user.age, 20, 40) + calc_likes(loc.id) + calc_weather(loc)
+
 def make_itinerary(prefs: Preferences):
     day = prefs.data.weekday()
     visit_time = prefs.time.hour
 
     def is_open(loc, start, end):
         return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
-        # return True
 
     filters = [
         lambda loc: True if not prefs.onlyFree else prefs.onlyFree and loc.price == 0,
@@ -39,67 +56,38 @@ def make_itinerary(prefs: Preferences):
     ]
     ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
 
-    morning   = [x for x in ok if is_open(x, 10, 12) and not x.durata > 2]
-    afternoon = [x for x in ok if is_open(x, 12, 18) and not x.durata > 6]
-    evening   = [x for x in ok if is_open(x, 18, 22) and not x.durata > 4]
+    def prepare(hours, duration):
+        locs  = [(x, full_score_of(x)) for x in ok if is_open(x, hours[0], hours[1]) and not x.durata > duration]
+        if len(locs) == 0:
+            return []
+        locs.sort(key = lambda x: x[1], reverse=True)
+        return [ x[0] for x in locs[0:min(3, len(locs))] ]
 
-    print(len(morning))
-    print(len(afternoon))
-    print(len(evening))
-
-    calc = lambda location: calc_age(users.current_user.age,20,40) + calc_likes(location.id) + calc_weather(location)
-    morning = [(x, calc(x)) for x in morning]
-    sorted(morning, key=lambda x: x[1], reverse=True)
-    morningAct =[elem[0] for elem in morning[0:3] ]
-
-    afternoon = [(x, calc(x)) for x in afternoon]
-    sorted(afternoon, key=lambda x: x[1], reverse=True)
-    afternoonAct=[elem[0] for elem in afternoon[0:3] ]
-
-    evening = [(x, calc(x)) for x in evening]
-    sorted(evening, key=lambda x: x[1], reverse=True)
-    eveningAct =[elem[0] for elem in evening[0:3] ]
-    
-
+    morning   = prepare([10, 12], 2)
+    afternoon = prepare([12, 18], 6)
+    evening   = prepare([18, 22], 4)
 
     return Itinerary (
-        morning= morningAct,
-        lunch= afternoonAct,
-        afternoon= afternoonAct,
-        dinner= afternoonAct,
-        night= eveningAct
+        morning     = morning,
+        lunch       = afternoon,
+        afternoon   = afternoon,
+        dinner      = afternoon,
+        night       = evening
     )
 
-    # prefs.luoghi
-    #restaurant = [x for x in locations if  x.category == Category.RESTORATION]
+def tests():
+    location.load_likes()
+    location.load_locations()
+    i = make_itinerary(Preferences(
+        byCar       = True,
+        lunch       = True,
+        dinner      = True,
+        onlyFree    = False,
+        withPet     = False,
+        data        = datetime.date(2022, 1, 1),
+        time        = datetime.time(15, 0),
+        categories  = location.all_categories()
+    ))
+    print(i.json())
 
-
-weights = {
-    "age"       : 0.25,
-    "distance"  : 0.25,
-    "rain"      : 0.5,
-    "likes"     : 0.5
-}
-scores = {}
-
-
-    
-
-def calc_age(user_age, lowest, highest):
-    if user_age >= lowest and user_age <= highest:
-        return 1.0
-    diff = min(lowest - user_age, user_age - highest)
-    return (1.0 - (diff / 100.0)) * weights["age"]
-
-def calc_likes(id):
-    return 0
-
-def calc_weather(id):
-    return 0
-
-#def distance
-
-#def tests():
-    #print(make_itinerary({
-        
-    #}))
+tests()

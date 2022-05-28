@@ -6,13 +6,25 @@ import json
 
 class Category(enum.Enum):
     RESTORATION = "restoration"
-    THEATER = "theater"
-    TREKKING = "trekking"
-    BIKE = "bike"
-    MUSEUM = "museum"
-    SQUARE = "square"
-    PARK = "park"
-    CHURCH = "church"
+    THEATER     = "theater"
+    TREKKING    = "trekking"
+    BIKE        = "bike"
+    MUSEUM      = "museum"
+    SQUARE      = "square"
+    PARK        = "park"
+    CHURCH      = "church"
+
+def all_categories():
+    return [
+        Category.RESTORATION,
+        Category.THEATER,
+        Category.TREKKING,
+        Category.BIKE,
+        Category.MUSEUM,
+        Category.SQUARE,
+        Category.PARK,
+        Category.CHURCH
+    ]
 
 def find_next_id():
     return 0 if len(locations) == 0 else max(us.id for us in locations) + 1
