@@ -16,7 +16,7 @@
       "category": "museum",
       "outside": true,
       "with_pets": true,
-      "ages": [ 20, 40 ],
+      "ages": [ 0, 30 ],
       "img":"https://www.museodilusiana.it/wp-content/uploads/2019/09/Villaggio-2019_1.jpg"
     },
     {
@@ -36,12 +36,12 @@
       "category": "museum",
       "outside": true,
       "with_pets": true,
-      "ages": [ 20, 40 ],
+      "ages": [ 0, 90 ],
       "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Civico-Giuseppe-Zannato-Montecchio-Maggiore-01.jpg"
     },
     {
       "id": 2,
-      "name": "museum Archeologico dell’Alto Vicentino",
+      "name": "Museo Archeologico dell’Alto Vicentino",
       "opening_times": [
           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "15:00:00"
       ],
@@ -56,7 +56,7 @@
       "category": "museum",
       "outside": false,
       "with_pets": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 0, 90 ],
       "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Archeologico-DellAlto-Vicentino-Santorso-01.jpg"
     },
     {
@@ -76,7 +76,7 @@
       "category": "museum",
       "outside": false,
       "with_pets": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 0, 40 ],
       "img":"https://www.museialtovicentino.it/wp-content/uploads/Bostel-Rotzo-01.jpg"
     },
     {
@@ -116,7 +116,7 @@
       "category": "museum",
       "outside": false,
       "with_pets": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 25, 45 ],
       "img":"https://www.museialtovicentino.it/wp-content/uploads/Musei-Civici-Covolo-Valbrenta-02.jpg"
     },
     {
@@ -136,7 +136,7 @@
       "category": "theater",
       "outside": false,
       "with_pets": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 18, 50 ],
       "img":"https://www.sipario.it/media/k2/items/cache/76d2217a3d8a98f82df5795df17d2825_XL.jpg"
     },
     {
@@ -156,7 +156,7 @@
       "category": "restoration",
       "outside": false,
       "with_pets": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 0, 90 ],
       "img":"https://files.spazioweb.it/47/e3/47e35e7c-9cc2-4948-b295-da83730642f3.jpg"
     }
      ,
@@ -176,11 +176,11 @@
         "notes": "https://www.monteberico.it/",
         "category": "trekking",
         "outside": true,
-        "ages": [ 20, 40 ],
+        "ages": [ 18, 65 ],
         "with_pets": true,
         "img":"https://upload.wikimedia.org/wikipedia/commons/9/96/Veneto_Vicenza2_Madonna_Monte_Berico_tango7174.jpg"
       },
-      {      
+      {
         "id": 9,
         "name": "Santuario di Santa Corona",
         "opening_times": [
@@ -196,7 +196,7 @@
         "notes": "",
         "category": "church",
         "outside": false,
-      "ages": [ 20, 40 ],
+        "ages": [ 20, 90 ],
         "with_pets": false,
         "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Santa_Corona_%28Vicenza%29.jpg/1200px-Santa_Corona_%28Vicenza%29.jpg"
       },
@@ -216,7 +216,7 @@
         "notes": "",
         "category": "museum",
         "outside": false,
-      "ages": [ 20, 40 ],
+        "ages": [ 20, 40 ],
         "with_pets": false,
         "img":"https://www.hotelfree.it/img-resize.asp?path=itinerari_veneto/img/basilica_palladiana.jpg&tp=5"
       },
@@ -236,7 +236,7 @@
         "notes": "https://www.villalarotonda.it/",
         "category": "museum",
         "outside": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 14, 40 ],
         "with_pets": false,
         "img":"https://www.vitourism.it/foto/ING/fl_25_foto2_Villa-La-Rotonda-ritaglio-quadrato_web.jpg"
       },
@@ -277,7 +277,7 @@
         "category": "park",
         "outside": true,
         "with_pets": true,
-      "ages": [ 20, 40 ],
+      "ages": [ 0, 90 ],
         "img":"https://upload.wikimedia.org/wikipedia/commons/d/d2/Vicenza_-_La_torre_di_Piazza_Castello_dai_giardini_Salvi.jpg"
       },
       {
@@ -297,7 +297,7 @@
         "category": "restoration",
         "outside": false,
         "with_pets": false,
-      "ages": [ 20, 40 ],
+        "ages": [ 25, 50 ],
         "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_584_foto1_fl_ing_584_OsteriaAlCursore.JPG"
       }
        ,
@@ -318,7 +318,7 @@
         "category": "restoration",
         "outside": false,
         "with_pets": false,
-      "ages": [ 20, 40 ],
+      "ages": [ 20, 80 ],
         "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_1381_foto5_66724557_1296425390520434_8696688563942588416_o.jpg"
       }
       ,
@@ -339,7 +339,26 @@
        "category": "restoration",
        "outside": false,
        "with_pets": false,
-      "ages": [ 20, 40 ],
+       "ages": [ 0, 60 ],
        "img":"https://media-cdn.tripadvisor.com/media/photo-s/05/b9/fe/71/da-biasio.jpg"
+     },
+     {
+         "id": 17,
+         "name": "Parco Faunistico Cappeller",
+         "opening_times": [
+             "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00"
+         ],
+         "closing_times": [
+            "19:00:00", "19:00:00", "19:00:00", "19:00:00", "19:00:00", "19:00:00", "19:00:00"
+         ],
+         "phone": "0424592513",
+         "price": 14,
+         "durata": 2,
+         "notes": "",
+         "category": "park",
+         "outside": true,
+         "with_pets": true,
+         "ages": [ 0, 90 ],
+         "img": "https://i0.wp.com/venetoforkids.it/wp-content/uploads/2015/03/20140831_131911.jpg"
      }
 ]
