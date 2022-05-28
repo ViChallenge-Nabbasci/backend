@@ -39,11 +39,12 @@ def full_score_of(loc):
         return location.all_likes_for(id) / location.all_likes() * weights["likes"]
     def calc_weather(id):
         return 0
-    return calc_age(users.current_user.age, 20, 40) + calc_likes(loc.id) + calc_weather(loc)
+    return calc_age(users.current_user.age, loc.ages[0], loc.ages[1]) + calc_likes(loc.id) + calc_weather(loc)
 
 def make_itinerary(prefs: Preferences):
     day = prefs.data.weekday()
-    visit_time = prefs.time.hour
+    # visit_time = prefs.time.hour
+    visit_time = 0
 
     def is_open(loc, start, end):
         return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
@@ -56,12 +57,18 @@ def make_itinerary(prefs: Preferences):
     ]
     ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
 
-    def prepare(hours, duration):
+    def prepare(hours, duration, restaurantOnly = False):
         locs  = [(x, full_score_of(x)) for x in ok if is_open(x, hours[0], hours[1]) and not x.durata > duration]
+        locs  = [ x for x in locs if x[0].category==location.Category.RESTORATION ] if restaurantOnly else locs
+        if restaurantOnly:
+            print(len(locs))
         if len(locs) == 0:
             return []
         locs.sort(key = lambda x: x[1], reverse=True)
         return [ x[0] for x in locs[0:min(3, len(locs))] ]
+
+    launch    = prepare([10, 12], 2, restaurantOnly=True)
+    dinner    = prepare([16, 22], 6, restaurantOnly=True)
 
     morning   = prepare([10, 12], 2)
     afternoon = prepare([12, 18], 6)
@@ -69,12 +76,13 @@ def make_itinerary(prefs: Preferences):
 
     return Itinerary (
         morning     = morning,
-        lunch       = afternoon,
+        lunch       = launch,
         afternoon   = afternoon,
-        dinner      = afternoon,
+        dinner      = dinner,
         night       = evening
     )
 
+"""
 def tests():
     location.load_likes()
     location.load_locations()
@@ -90,4 +98,5 @@ def tests():
     ))
     print(i.json())
 
-# tests()
+tests()
+"""
