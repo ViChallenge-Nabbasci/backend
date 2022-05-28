@@ -16,11 +16,11 @@ class Preferences(BaseModel):
     categories: list[location.Category]
 
 class Itinerary(BaseModel):
-    morning: location.Location
-    lunch: location.Location
+    morning: list[location.Location]
+    lunch: list[location.Location]
     afternoon: list[location.Location]
-    dinner: location.Location
-    night: location.Location
+    dinner: list[location.Location]
+    night: list[location.Location]
 
 def make_itinerary(prefs: Preferences):
     day = prefs.data.weekday()
@@ -48,22 +48,24 @@ def make_itinerary(prefs: Preferences):
     calc = lambda location: calc_age(users.current_user.age,20,40) + calc_likes(location.id) + calc_weather(location)
     morning = [(x, calc(x)) for x in morning]
     sorted(morning, key=lambda x: x[1], reverse=True)
-    morningAct = morning[0]
+    morningAct =[elem[0] for elem in morning[0:3] ]
 
     afternoon = [(x, calc(x)) for x in afternoon]
     sorted(afternoon, key=lambda x: x[1], reverse=True)
-    afternoonAct = afternoon[0]
+    afternoonAct=[elem[0] for elem in afternoon[0:3] ]
 
     evening = [(x, calc(x)) for x in evening]
     sorted(evening, key=lambda x: x[1], reverse=True)
-    eveningAct = evening[0]
+    eveningAct =[elem[0] for elem in evening[0:3] ]
+    
+
 
     return Itinerary (
-        morning= morningAct[0],
-        lunch= afternoonAct[0],
-        afternoon= [afternoonAct[0]],
-        dinner= afternoonAct[0],
-        night= eveningAct[0]
+        morning= morningAct,
+        lunch= afternoonAct,
+        afternoon= afternoonAct,
+        dinner= afternoonAct,
+        night= eveningAct
     )
 
     # prefs.luoghi
