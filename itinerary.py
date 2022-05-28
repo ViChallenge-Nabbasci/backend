@@ -82,7 +82,7 @@ def make_itinerary(prefs: Preferences):
     afternoon = prepare([12, 18], 6)
     evening   = prepare([21, 23], 2)
 
-    launch    = prepare([10, 12], 2, restaurantOnly=True)
+    launch    = prepare([12, 14], 2, restaurantOnly=True)
     dinner    = prepare([16, 22], 6, restaurantOnly=True)
 
 
