@@ -1,10 +1,11 @@
-from datetime import datetime
+from datetime import date, datetime
 from unicodedata import category
 # from test import Category, locations,current_user
 from pydantic import BaseModel, Field
 import location
 import datetime
 import users
+from typing import List
 
 class Preferences(BaseModel):
     byCar: bool
@@ -13,15 +14,14 @@ class Preferences(BaseModel):
     onlyFree: bool
     withPet:bool
     data: datetime.date
-    time: datetime.time
-    categories: list[location.Category]
+    categories: List[location.Category]
 
 class Itinerary(BaseModel):
-    morning: list[location.Location]
-    lunch: list[location.Location]
-    afternoon: list[location.Location]
-    dinner: list[location.Location]
-    night: list[location.Location]
+    morning: List[location.Location]
+    lunch: List[location.Location]
+    afternoon: List[location.Location]
+    dinner: List[location.Location]
+    night: List[location.Location]
 
 def full_score_of(loc):
     weights = {
@@ -44,43 +44,42 @@ def full_score_of(loc):
 def make_itinerary(prefs: Preferences):
     day = prefs.data.weekday()
     # visit_time = prefs.time.hour
-    visit_time = 0
+    visit_time = datetime.datetime.now().hour if date.today() == prefs.data else 0
 
     def is_open(loc, start, end):
         return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
 
     filters = [
-        lambda loc: True if not prefs.onlyFree else prefs.onlyFree and loc.price == 0,
+        lambda loc: True if not prefs.onlyFree else loc.price == 0,
         lambda loc: loc.category in prefs.categories,
-        lambda loc: True if not prefs.withPet else prefs.withPet and loc.with_pets,
-        lambda loc: is_open(loc, visit_time, 23)
+        lambda loc: True if not prefs.withPet else loc.with_pets,
+        lambda loc: loc.closing_times[day].hour > visit_time
     ]
     ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
 
     def prepare_internal(hours, duration, restaurantOnly = False):
         locs  = [(x, full_score_of(x)) for x in ok if is_open(x, hours[0], hours[1]) and not x.durata > duration]
-        locs  = [ x for x in locs if x[0].category==location.Category.RESTORATION ] if restaurantOnly else locs
-        if restaurantOnly:
-            print(len(locs))
+        locs  = [ x for x in locs if x[0].category==location.Category.RESTORATION ] if restaurantOnly else [ x for x in locs if x[0].category!=location.Category.RESTORATION ]
         if len(locs) == 0:
-            return []
+            return []        
         locs.sort(key = lambda x: x[1], reverse=True)
         return [ x[0] for x in locs[0:min(3, len(locs))] ]
 
     def prepare(hours, duration, restaurantOnly = False):
         nonlocal ok
         l = prepare_internal(hours, duration, restaurantOnly)
-        ok = filter(lambda x: x not in l, ok)
+        ok = [k for k in ok if k not in l]
         #ok = ok2
         return l
 
 
-    launch    = prepare([10, 12], 2, restaurantOnly=True)
-    dinner    = prepare([16, 22], 6, restaurantOnly=True)
 
     morning   = prepare([10, 12], 2)
     afternoon = prepare([12, 18], 6)
     evening   = prepare([18, 22], 4)
+
+    launch    = prepare([10, 12], 2, restaurantOnly=True)
+    dinner    = prepare([16, 22], 6, restaurantOnly=True)
 
     return Itinerary (
         morning     = morning,

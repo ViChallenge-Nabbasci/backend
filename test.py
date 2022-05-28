@@ -45,6 +45,9 @@ async def get_user(req: LikeRequest):
     return {"response": "like processed"}
 
 
+@app.get("/ping")
+async def test_sku():
+    return {"message:": "pong"}
 
 @app.post("/getItinerary")
 async def get_itinerary(req: itinerary.Preferences):
@@ -57,4 +60,4 @@ if __name__ == "__main__":
     local_ip = socket.gethostbyname(hostname)
     location.load_likes()
     location.load_locations()
-    uvicorn.run("test:app", host=local_ip, port=8080, log_level="info")
+    uvicorn.run("test:app", host=local_ip, port=8080, log_level="debug")
