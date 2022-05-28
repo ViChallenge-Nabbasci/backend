@@ -15,7 +15,8 @@
       "notes": "",
       "category": "museum",
       "outside": true,
-      "with_pets": true
+      "with_pets": true,
+      "img":"https://www.museodilusiana.it/wp-content/uploads/2019/09/Villaggio-2019_1.jpg"
     },
     {
       "id": 1,
@@ -33,7 +34,8 @@
       "notes": "",
       "category": "museum",
       "outside": true,
-      "with_pets": true
+      "with_pets": true,
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Civico-Giuseppe-Zannato-Montecchio-Maggiore-01.jpg"
     },
     {
       "id": 2,
@@ -51,7 +53,8 @@
       "notes": "",
       "category": "museum",
       "outside": false,
-      "with_pets": false
+      "with_pets": false,
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Archeologico-DellAlto-Vicentino-Santorso-01.jpg"
     },
     {
       "id": 3,
@@ -69,7 +72,8 @@
       "notes": "",
       "category": "museum",
       "outside": false,
-      "with_pets": false
+      "with_pets": false,
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Bostel-Rotzo-01.jpg"
     },
     {
       "id": 4,
@@ -87,7 +91,8 @@
       "notes": "",
       "category": "museum",
       "outside": false,
-      "with_pets": false
+      "with_pets": false,
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Castello-Inferiore-Marostica-01.jpg"
     },
     {
       "id": 5,
@@ -105,7 +110,8 @@
       "notes": "",
       "category": "museum",
       "outside": false,
-      "with_pets": false
+      "with_pets": false,
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Musei-Civici-Covolo-Valbrenta-02.jpg"
     },
     {
       "id": 6,
@@ -123,7 +129,8 @@
       "notes": "",
       "category": "theater",
       "outside": false,
-      "with_pets": false
+      "with_pets": false,
+      "img":"https://www.sipario.it/media/k2/items/cache/76d2217a3d8a98f82df5795df17d2825_XL.jpg"
     },
     {
       "id": 7,
@@ -141,7 +148,8 @@
       "notes": "",
       "category": "restoration",
       "outside": false,
-      "with_pets": false
+      "with_pets": false,
+      "img":"https://files.spazioweb.it/47/e3/47e35e7c-9cc2-4948-b295-da83730642f3.jpg"
     }
      ,
       {
@@ -159,7 +167,8 @@
         "notes": "https://www.monteberico.it/",
         "category": "trekking",
         "outside": true,
-        "with_pets": true
+        "with_pets": true,
+        "img":"https://upload.wikimedia.org/wikipedia/commons/9/96/Veneto_Vicenza2_Madonna_Monte_Berico_tango7174.jpg"
       },
       {
         "name": "Santuario di Santa Corona",
@@ -176,7 +185,8 @@
         "notes": "",
         "category": "church",
         "outside": false,
-        "with_pets": false
+        "with_pets": false,
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Santa_Corona_%28Vicenza%29.jpg/1200px-Santa_Corona_%28Vicenza%29.jpg"
       },
       {
         "name": "Basilica Palladiana",
@@ -193,7 +203,8 @@
         "notes": "",
         "category": "museum",
         "outside": false,
-        "with_pets": false
+        "with_pets": false,
+        "img":"https://www.hotelfree.it/img-resize.asp?path=itinerari_veneto/img/basilica_palladiana.jpg&tp=5"
       },
       {
         "name": "Villa la Rotonda",
@@ -210,7 +221,8 @@
         "notes": "https://www.villalarotonda.it/",
         "category": "museum",
         "outside": false,
-        "with_pets": false
+        "with_pets": false,
+        "img":"https://www.vitourism.it/foto/ING/fl_25_foto2_Villa-La-Rotonda-ritaglio-quadrato_web.jpg"
       },
       {
         "name": "Contrà Mure Porta Nova",
@@ -227,7 +239,8 @@
         "notes": "",
         "category": "square",
         "outside": true,
-        "with_pets": true
+        "with_pets": true,
+        "img":"https://mapio.net/images-p/2905304.jpg"
       },
       {
         "name": "Giardino Salvi",
@@ -244,6 +257,7 @@
         "notes": "",
         "category": "park",
         "outside": true,
-        "with_pets": true
+        "with_pets": true,
+        "img":"https://upload.wikimedia.org/wikipedia/commons/d/d2/Vicenza_-_La_torre_di_Piazza_Castello_dai_giardini_Salvi.jpg"
       }
 ]
