@@ -1,11 +1,12 @@
 from datetime import date, datetime
+from optparse import Option
 from unicodedata import category
 # from test import Category, locations,current_user
 from pydantic import BaseModel, Field
 import location
 import datetime
 import users
-from typing import List
+from typing import List, Optional
 
 class Preferences(BaseModel):
     byCar: bool
@@ -18,9 +19,9 @@ class Preferences(BaseModel):
 
 class Itinerary(BaseModel):
     morning: List[location.Location]
-    lunch: List[location.Location]
+    lunch: Optional[List[location.Location]] = None
     afternoon: List[location.Location]
-    dinner: List[location.Location]
+    dinner:Optional[List[location.Location]] = None
     night: List[location.Location]
 
 def full_score_of(loc):
@@ -78,8 +79,10 @@ def make_itinerary(prefs: Preferences):
     afternoon = prepare([12, 18], 6)
     evening   = prepare([18, 22], 4)
 
-    launch    = prepare([10, 12], 2, restaurantOnly=True)
-    dinner    = prepare([16, 22], 6, restaurantOnly=True)
+    if prefs.dinner:
+        dinner    = prepare([16, 22], 6, restaurantOnly=True)
+    if prefs.lunch:
+        launch    = prepare([10, 12], 2, restaurantOnly=True)
 
     return Itinerary (
         morning     = morning,
