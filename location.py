@@ -50,12 +50,12 @@ def load_likes():
 def load_locations():
     global locations
     with open('locations.json') as d:
-        locations = [ Location(**x) for x in json.load(d) ]
-        #try:
-        #except Exception as e: 
-           # print(e)
-           # sys.exit(0)
-       
+        try:
+            locations = [ Location(**x) for x in json.load(d) ]
+        except Exception as e:
+            print(e)
+            sys.exit(0)
+
 
 def all_likes():
     return sum([ len(likes[key]) for key in likes ])
@@ -63,6 +63,3 @@ def all_likes():
 def all_likes_for(id):
     return sum([ 1 if id in likes[key] else 0 for key in likes ])
 
-
-def all_likes_for(id):
-    return sum([ 1 if id in likes[key] else 0 for key in likes ])
