@@ -364,13 +364,13 @@
      }
      ,
      {
-         "id": 17,
+         "id": 18,
          "name": "Viceramica: mostra mercato in Piazza dei Signori",
          "opening_times": [
-             "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00"
+             "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "09:00:00", "09:00:00"
          ],
          "closing_times": [
-            "23:30:00", "23:30:00", "23:30:00", "23:30:00","23:30:00","23:30:00","23:30:00"
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00","00:00:00","23:30:00","23:30:00"
          ],
          "phone": "0424592513",
          "price": 0,
@@ -383,4 +383,26 @@
          "ages": [ 0, 90 ],
          "img": "https://www.comune.vicenza.it/fotonot/inot-315092.jpg"
      }
+     ,
+     {
+         "id": 19,
+         "name": "Una serata con Manlio Castagna ",
+         "opening_times": [
+             "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "21:00:00", "21:00:00"
+         ],
+         "closing_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00","00:00:00","23:30:00","23:30:00"
+         ],
+         "phone": "0424592513",
+         "price": 0,
+         "durata": 1,
+         "address": "Lanificio Conte - Sala Turbine",
+         "notes": "",
+         "category": "theater",
+         "outside": true,
+         "with_pets": true,
+         "ages": [ 0, 90 ],
+         "img": "https://www.eventbrite.it/e/biglietti-una-serata-con-manlio-castagna-332588921417"
+     }
 ]
+ 
