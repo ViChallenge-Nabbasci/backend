@@ -19,9 +19,9 @@ class Preferences(BaseModel):
 
 class Itinerary(BaseModel):
     morning: List[location.Location]
-    lunch: Optional[List[location.Location]] = None
+    lunch: List[location.Location]
     afternoon: List[location.Location]
-    dinner:Optional[List[location.Location]] = None
+    dinner:List[location.Location]
     night: List[location.Location]
 
 def full_score_of(loc):
@@ -79,16 +79,15 @@ def make_itinerary(prefs: Preferences):
     afternoon = prepare([12, 18], 6)
     evening   = prepare([18, 22], 4)
 
-    if prefs.dinner:
-        dinner    = prepare([16, 22], 6, restaurantOnly=True)
-    if prefs.lunch:
-        launch    = prepare([10, 12], 2, restaurantOnly=True)
+    launch    = prepare([10, 12], 2, restaurantOnly=True)
+    dinner    = prepare([16, 22], 6, restaurantOnly=True)
+
 
     return Itinerary (
         morning     = morning,
-        lunch       = launch,
+        lunch       = [] if not prefs.lunch else launch,
         afternoon   = afternoon,
-        dinner      = dinner,
+        dinner      = [] if not prefs.dinner else dinner,
         night       = evening
     )
 

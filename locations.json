@@ -354,6 +354,7 @@
          "phone": "0424592513",
          "price": 14,
          "durata": 2,
+         "address": "viale giuseppe mazzini 68a",
          "notes": "",
          "category": "park",
          "outside": true,
