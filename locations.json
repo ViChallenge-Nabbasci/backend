@@ -17,7 +17,8 @@
       "outside": true,
       "with_pets": true,
       "ages": [ 0, 30 ],
-      "img":"https://www.museodilusiana.it/wp-content/uploads/2019/09/Villaggio-2019_1.jpg"
+      "img":"https://www.museodilusiana.it/wp-content/uploads/2019/09/Villaggio-2019_1.jpg",
+      "location":"https://goo.gl/maps/J8a3x2DMBmbLuSD8A"
     },
     {
       "id": 1,
@@ -37,7 +38,8 @@
       "outside": true,
       "with_pets": true,
       "ages": [ 0, 90 ],
-      "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Civico-Giuseppe-Zannato-Montecchio-Maggiore-01.jpg"
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Civico-Giuseppe-Zannato-Montecchio-Maggiore-01.jpg",
+      "location":"https://goo.gl/maps/qBV4VDj67qaqpkYw8"
     },
     {
       "id": 2,
@@ -57,7 +59,8 @@
       "outside": false,
       "with_pets": false,
       "ages": [ 0, 90 ],
-      "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Archeologico-DellAlto-Vicentino-Santorso-01.jpg"
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Museo-Archeologico-DellAlto-Vicentino-Santorso-01.jpg",
+      "location":"https://g.page/museoarcheologico-altovicentino?share"
     },
     {
       "id": 3,
@@ -77,7 +80,8 @@
       "outside": false,
       "with_pets": false,
       "ages": [ 0, 40 ],
-      "img":"https://www.museialtovicentino.it/wp-content/uploads/Bostel-Rotzo-01.jpg"
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Bostel-Rotzo-01.jpg",
+      "location":"https://goo.gl/maps/ePv3ybju4tnYS71h7"
     },
     {
       "id": 4,
@@ -97,7 +101,8 @@
       "outside": false,
       "with_pets": false,
       "ages": [ 20, 40 ],
-      "img":"https://www.museialtovicentino.it/wp-content/uploads/Castello-Inferiore-Marostica-01.jpg"
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Castello-Inferiore-Marostica-01.jpg",
+      "location":"https://goo.gl/maps/A871ri5AK2UPHq8cA"
     },
     {
       "id": 5,
@@ -113,11 +118,12 @@
       "durata": 2,
       "address": "",
       "notes": "",
-      "category": "museum",
+      "category": "trekking",
       "outside": false,
       "with_pets": false,
       "ages": [ 25, 45 ],
-      "img":"https://www.museialtovicentino.it/wp-content/uploads/Musei-Civici-Covolo-Valbrenta-02.jpg"
+      "img":"https://www.museialtovicentino.it/wp-content/uploads/Musei-Civici-Covolo-Valbrenta-02.jpg",
+      "location":"https://goo.gl/maps/GP5V68AJ5hc34uQ9A"
     },
     {
       "id": 6,
@@ -137,16 +143,17 @@
       "outside": false,
       "with_pets": false,
       "ages": [ 18, 50 ],
-      "img":"https://www.sipario.it/media/k2/items/cache/76d2217a3d8a98f82df5795df17d2825_XL.jpg"
+      "img":"https://www.sipario.it/media/k2/items/cache/76d2217a3d8a98f82df5795df17d2825_XL.jpg",
+      "location":"https://goo.gl/maps/sLrrmDmY44JXTxEo8"
     },
     {
       "id": 7,
       "name": "Ristorante al pastello",
       "opening_times": [
-          "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+          "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "18:00:00", "18:00:00"
       ],
       "closing_times": [
-          "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+          "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:00:00", "23:00:00"
       ],
       "phone": "0444323721",
       "price": 10,
@@ -157,7 +164,8 @@
       "outside": false,
       "with_pets": false,
       "ages": [ 0, 90 ],
-      "img":"https://files.spazioweb.it/47/e3/47e35e7c-9cc2-4948-b295-da83730642f3.jpg"
+      "img":"https://files.spazioweb.it/47/e3/47e35e7c-9cc2-4948-b295-da83730642f3.jpg",
+      "location":"https://g.page/alpestello?share"
     }
      ,
       {
@@ -178,7 +186,8 @@
         "outside": true,
         "ages": [ 18, 65 ],
         "with_pets": true,
-        "img":"https://upload.wikimedia.org/wikipedia/commons/9/96/Veneto_Vicenza2_Madonna_Monte_Berico_tango7174.jpg"
+        "img":"https://upload.wikimedia.org/wikipedia/commons/9/96/Veneto_Vicenza2_Madonna_Monte_Berico_tango7174.jpg",
+        "location":"https://goo.gl/maps/4JPLiUZfimrnyiux7"
       },
       {
         "id": 9,
@@ -198,7 +207,8 @@
         "outside": false,
         "ages": [ 20, 90 ],
         "with_pets": false,
-        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Santa_Corona_%28Vicenza%29.jpg/1200px-Santa_Corona_%28Vicenza%29.jpg"
+        "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Santa_Corona_%28Vicenza%29.jpg/1200px-Santa_Corona_%28Vicenza%29.jpg",
+        "location":"https://goo.gl/maps/WP7xBqJkLWxUg1ER9"
       },
       {
         "id": 10,
@@ -218,7 +228,8 @@
         "outside": false,
         "ages": [ 20, 40 ],
         "with_pets": false,
-        "img":"https://www.hotelfree.it/img-resize.asp?path=itinerari_veneto/img/basilica_palladiana.jpg&tp=5"
+        "img":"https://www.hotelfree.it/img-resize.asp?path=itinerari_veneto/img/basilica_palladiana.jpg&tp=5",
+        "location":"https://goo.gl/maps/NHFnyQaqukZb8Xj96"
       },
       {
         "id": 11,
@@ -238,7 +249,8 @@
         "outside": false,
       "ages": [ 14, 40 ],
         "with_pets": false,
-        "img":"https://www.vitourism.it/foto/ING/fl_25_foto2_Villa-La-Rotonda-ritaglio-quadrato_web.jpg"
+        "img":"https://www.vitourism.it/foto/ING/fl_25_foto2_Villa-La-Rotonda-ritaglio-quadrato_web.jpg",
+        "location":"https://g.page/villa-la-rotonda-vicenza?share"
       },
       {
         "id": 12,
@@ -247,7 +259,7 @@
             "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
         ],
         "closing_times": [
-            "23:59:00", "23:59:00", "23:59:00", "23:59:00", "23:59:00", "23:59:00", "23:59:00"
+            "23:00:00", "23:00:00", "23:00:00", "23:00:00", "23:00:00", "23:00:00", "23:00:00"
         ],
         "phone": "",
         "price": 12,
@@ -258,7 +270,8 @@
         "outside": true,
         "with_pets": true,
       "ages": [ 20, 40 ],
-        "img":"https://mapio.net/images-p/2905304.jpg"
+        "img":"https://mapio.net/images-p/2905304.jpg",
+        "location":"https://goo.gl/maps/LS7sL74YmyhN1ybG6"
       },
       {
         "id": 13,
@@ -278,16 +291,17 @@
         "outside": true,
         "with_pets": true,
       "ages": [ 0, 90 ],
-        "img":"https://upload.wikimedia.org/wikipedia/commons/d/d2/Vicenza_-_La_torre_di_Piazza_Castello_dai_giardini_Salvi.jpg"
+        "img":"https://upload.wikimedia.org/wikipedia/commons/d/d2/Vicenza_-_La_torre_di_Piazza_Castello_dai_giardini_Salvi.jpg",
+        "location":"https://goo.gl/maps/qCdrbMPDwM1wKC1P9"
       },
       {
         "id": 14,
         "name": "Osteria Il Cursore",
         "opening_times": [
-            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "18:00:00", "18:00:00"
         ],
         "closing_times": [
-            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:00:00", "23:00:00"
         ],
         "phone": "0444323504",
         "price": 10,
@@ -298,17 +312,18 @@
         "outside": false,
         "with_pets": false,
         "ages": [ 25, 50 ],
-        "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_584_foto1_fl_ing_584_OsteriaAlCursore.JPG"
+        "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_584_foto1_fl_ing_584_OsteriaAlCursore.JPG",
+        "location":"https://goo.gl/maps/sQQH9jwCE9iPXNpr7"
       }
        ,
        {
         "id": 15,
         "name": "Ristorante il ceppo",
         "opening_times": [
-            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "18:00:00", "18:00:00"
         ],
         "closing_times": [
-            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:00:00", "23:00:00"
         ],
         "phone": "0444544414",
         "price": 10,
@@ -319,17 +334,18 @@
         "outside": false,
         "with_pets": false,
       "ages": [ 20, 80 ],
-        "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_1381_foto5_66724557_1296425390520434_8696688563942588416_o.jpg"
+        "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_1381_foto5_66724557_1296425390520434_8696688563942588416_o.jpg",
+        "location":"https://goo.gl/maps/xP3pFDuNBhtursSw6"
       }
       ,
       {
        "id": 16,
        "name": "Ristorante Da Biasio",
        "opening_times": [
-           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "18:00:00", "18:00:00"
        ],
        "closing_times": [
-           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:00:00", "23:00:00"
        ],
        "phone": "0444323363",
        "price": 10,
@@ -340,7 +356,8 @@
        "outside": false,
        "with_pets": false,
        "ages": [ 0, 60 ],
-       "img":"https://media-cdn.tripadvisor.com/media/photo-s/05/b9/fe/71/da-biasio.jpg"
+       "img":"https://media-cdn.tripadvisor.com/media/photo-s/05/b9/fe/71/da-biasio.jpg",
+       "location":"https://goo.gl/maps/PHEXxstC4P1FhEnX9"
      },
      {
          "id": 17,
@@ -360,7 +377,8 @@
          "outside": true,
          "with_pets": true,
          "ages": [ 0, 90 ],
-         "img": "https://i0.wp.com/venetoforkids.it/wp-content/uploads/2015/03/20140831_131911.jpg"
+         "img": "https://i0.wp.com/venetoforkids.it/wp-content/uploads/2015/03/20140831_131911.jpg",
+         "location":"https://g.page/parcocappeller?share"
      }
      ,
      {
@@ -381,7 +399,8 @@
          "outside": true,
          "with_pets": true,
          "ages": [ 0, 90 ],
-         "img": "https://www.comune.vicenza.it/fotonot/inot-315092.jpg"
+         "img": "https://www.comune.vicenza.it/fotonot/inot-315092.jpg",
+         "location":"https://goo.gl/maps/SrRKPN6XJTPL7kE16"
      }
      ,
      {
@@ -402,7 +421,8 @@
          "outside": true,
          "with_pets": true,
          "ages": [ 0, 90 ],
-         "img": "https://www.eventbrite.it/e/biglietti-una-serata-con-manlio-castagna-332588921417"
+         "img": "https://www.eventbrite.it/e/biglietti-una-serata-con-manlio-castagna-332588921417",
+         "location":"https://goo.gl/maps/J3PSmmeWGYZwGvKP7"
      }
 ]
  
