@@ -13,6 +13,7 @@ class Preferences(BaseModel):
     onlyFree: bool
     withPet:bool
     data: datetime.date
+    time: datetime.time
     categories: list[location.Category]
 
 class Itinerary(BaseModel):
@@ -24,19 +25,20 @@ class Itinerary(BaseModel):
 
 def make_itinerary(prefs: Preferences):
     day = prefs.data.weekday()
-
-
-    filters = [
-        #lambda loc: True if prefs.onlyFree else prefs.onlyFree and loc.price == 0,
-        #lambda loc: loc.category in prefs.categories,
-        #lambda loc: True if prefs.withPet else prefs.withPet and loc.with_pets
-    ]
-    ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
-
+    visit_time = prefs.time.hour
 
     def is_open(loc, start, end):
         return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
-        #return True
+        # return True
+
+    filters = [
+        lambda loc: True if not prefs.onlyFree else prefs.onlyFree and loc.price == 0,
+        lambda loc: loc.category in prefs.categories,
+        lambda loc: True if not prefs.withPet else prefs.withPet and loc.with_pets,
+        lambda loc: is_open(loc, visit_time, 23)
+    ]
+    ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
+
     morning   = [x for x in ok if is_open(x, 10, 12) and not x.durata > 2]
     afternoon = [x for x in ok if is_open(x, 12, 18) and not x.durata > 6]
     evening   = [x for x in ok if is_open(x, 18, 22) and not x.durata > 4]
