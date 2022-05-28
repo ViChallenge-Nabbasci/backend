@@ -42,6 +42,8 @@ class Location(BaseModel):
     category: Category
     outside: bool
     with_pets: bool
+    ages: list[int]
+    img: str
 
 locations = {}
 likes = {}
