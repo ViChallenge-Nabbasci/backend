@@ -10,9 +10,12 @@ class Category(enum.Enum):
     TREKKING = "trekking"
     BIKE = "bike"
     MUSEUM = "museum"
+    SQUARE = "square"
+    PARK = "park"
+    CHURCH = "church"
 
 def find_next_id():
-    return max(Location.id for us in locations) + 1
+    return 0 if len(locations) == 0 else max(us.id for us in locations) + 1
 
 class Location(BaseModel):
     id: int = Field(default_factory=find_next_id)
@@ -47,11 +50,12 @@ def load_likes():
 def load_locations():
     global locations
     with open('locations.json') as d:
-        try:
-            locations = [ Location(**x) for x in json.load(d) ]
-        except:
-            print('json load fail')
-            sys.exit(0)
+        locations = [ Location(**x) for x in json.load(d) ]
+        #try:
+        #except Exception as e: 
+           # print(e)
+           # sys.exit(0)
+       
 
 def all_likes():
     return sum([ len(likes[key]) for key in likes ])

@@ -35,8 +35,8 @@ def make_itinerary(prefs: Preferences):
 
 
     def is_open(loc, start, end):
-        #return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
-        return True
+        return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
+        #return True
     morning   = [x for x in ok if is_open(x, 10, 12) and not x.durata > 2]
     afternoon = [x for x in ok if is_open(x, 12, 18) and not x.durata > 6]
     evening   = [x for x in ok if is_open(x, 18, 22) and not x.durata > 4]
