@@ -142,5 +142,166 @@
       "category": "restoration",
       "outside": false,
       "with_pets": false
-    }
+    },
+      {
+        "name": "Parco Faunistico Cappeller",
+        "opening_times": [
+            "00:09:00", "00:09:00", "00:09:00", "00:09:00", "00:09:00", "00:09:00", "00:00:00"
+        ],
+        "closing_times": [
+            "00:19:00", "00:19:00", "00:19:00", "00:19:00", "00:19:00", "00:19:00", "00:19:00"
+        ],
+        "phone": "9-20",
+        "price": "0424592513",
+        "durata": 14,
+        "address": 2,
+        "notes": "Il Parco Faunistico Cappeller",
+        "category": "https://parcocappeller.it/",
+        "outside": "park",
+        "with_pets": true
+      },
+      {
+        "name": "Monte Berico",
+        "opening_times": [
+            "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00"
+        ],
+        "closing_times": [
+            "00:17:00", "00:17:00", "00:17:00", "00:17:00", "00:17:00", "00:17:00", "00:17:00"
+        ],
+        "lun": "8-17",
+        "mar": "8-17",
+        "mer": "8-17",
+        "gio": "8-17",
+        "ven": "8-17",
+        "sab": "8-17",
+        "dom": "8-17",
+        "phone": "",
+        "price": "",
+        "durata": 1,
+        "address": "monte berico vicenza",
+        "notes": "https://www.monteberico.it/",
+        "category": "trekking",
+        "outside": true,
+        "with_pets": true
+      },
+      {
+        "name": "Santuario di Santa Corona",
+        "opening_times": [
+            "00:09:00", "00:09:00", "00:09:00", "00:09:00", "00:09:00", "00:09:00", "00:09:00"
+        ],
+        "closing_times": [
+            "00:17:00", "00:17:00", "00:17:00", "00:17:00", "00:17:00", "00:17:00", "00:17:00"
+        ],
+        "lun": "9-17",
+        "mar": "9-17",
+        "mer": "9-17",
+        "gio": "9-17",
+        "ven": "9-17",
+        "sab": "9-17",
+        "dom": "9-17",
+        "phone": "",
+        "price": 0,
+        "durata": 2,
+        "address": "santuario di santa corona",
+        "notes": "",
+        "category": "church",
+        "outside": false,
+        "with_pets": false
+      },
+      {
+        "name": "Basilica Palladiana",
+        "opening_times": [
+            "00:00:00", "00:10:00", "00:10:00", "00:10:00", "00:10:00", "00:10:00", "00:10:00"
+        ],
+        "closing_times": [
+            "00:00:00", "00:18:00", "00:18:00", "00:18:00", "00:18:00", "00:18:00", "00:18:00"
+        ],
+        "lun": "",
+        "mar": "10-18",
+        "mer": "10-18",
+        "gio": "10-18",
+        "ven": "10-18",
+        "sab": "10-18",
+        "dom": "10-18",
+        "phone": "",
+        "price": 5,
+        "durata": 1,
+        "address": "basilica palladiana",
+        "notes": "",
+        "category": "museum",
+        "outside": false,
+        "with_pets": false
+      },
+      {
+        "name": "Villa la Rotonda",
+        "opening_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:10:00", "00:10:00", "00:10:00", "00:10:00"
+        ],
+        "closing_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:18:00", "00:18:00", "00:18:00", "00:18:00"
+        ],
+        "lun": "",
+        "mar": "",
+        "mer": "",
+        "gio": "10-18",
+        "ven": "10-18",
+        "sab": "10-18",
+        "dom": "10-18",
+        "phone": "0444321793",
+        "price": 10,
+        "durata": 2,
+        "address": "Villa la Rotonda",
+        "notes": "https://www.villalarotonda.it/",
+        "category": "museum",
+        "outside": false,
+        "with_pets": false
+      },
+      {
+        "name": "Contrà Mure Porta Nova",
+        "opening_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+        ],
+        "closing_times": [
+            "00:24:00", "00:24:00", "00:24:00", "00:24:00", "00:24:00", "00:24:00", "00:24:00"
+        ],
+        "lun": "0-24",
+        "mar": "0-24",
+        "mer": "0-24",
+        "gio": "0-24",
+        "ven": "0-24",
+        "sab": "0-24",
+        "dom": "0-24",
+        "phone": "",
+        "price": "",
+        "durata": 1,
+        "address": "Contrà Mure Porta Nova",
+        "notes": "",
+        "category": "square",
+        "outside": true,
+        "with_pets": true
+      },
+      {
+        "name": "Giardino Salvi",
+        "opening_times": [
+            "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00"
+        ],
+        "closing_times": [
+            "00:20:00", "00:20:00", "00:20:00", "00:20:00", "00:20:00", "00:20:00", "00:20:00"
+        ],
+        "lun": "8-20",
+        "mar": "8-20",
+        "mer": "8-20",
+        "gio": "8-20",
+        "ven": "8-20",
+        "sab": "8-20",
+        "dom": "8-20",
+        "phone": "",
+        "price": "",
+        "durata": 2,
+        "address": "Giardino Salvi",
+        "notes": "",
+        "category": "park",
+        "outside": true,
+        "with_pets": true
+      }
 ]
