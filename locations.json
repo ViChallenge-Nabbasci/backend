@@ -153,6 +153,7 @@
     }
      ,
       {
+        "id": 8,
         "name": "Monte Berico",
         "opening_times": [
             "08:00:00", "08:00:00", "08:00:00", "08:00:00", "08:00:00", "08:00:00", "08:00:00"
@@ -170,7 +171,8 @@
         "with_pets": true,
         "img":"https://upload.wikimedia.org/wikipedia/commons/9/96/Veneto_Vicenza2_Madonna_Monte_Berico_tango7174.jpg"
       },
-      {
+      {      
+        "id": 9,
         "name": "Santuario di Santa Corona",
         "opening_times": [
             "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00", "09:00:00"
@@ -189,6 +191,7 @@
         "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Santa_Corona_%28Vicenza%29.jpg/1200px-Santa_Corona_%28Vicenza%29.jpg"
       },
       {
+        "id": 10,
         "name": "Basilica Palladiana",
         "opening_times": [
             "00:00:00", "10:00:00", "10:00:00", "10:00:00", "10:00:00", "10:00:00", "10:00:00"
@@ -207,6 +210,7 @@
         "img":"https://www.hotelfree.it/img-resize.asp?path=itinerari_veneto/img/basilica_palladiana.jpg&tp=5"
       },
       {
+        "id": 11,
         "name": "Villa la Rotonda",
         "opening_times": [
             "00:00:00", "00:00:00", "00:00:00", "00:10:00", "00:10:00", "00:10:00", "00:10:00"
@@ -225,6 +229,7 @@
         "img":"https://www.vitourism.it/foto/ING/fl_25_foto2_Villa-La-Rotonda-ritaglio-quadrato_web.jpg"
       },
       {
+        "id": 12,
         "name": "Contrà Mure Porta Nova",
         "opening_times": [
             "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
@@ -243,6 +248,7 @@
         "img":"https://mapio.net/images-p/2905304.jpg"
       },
       {
+        "id": 13,
         "name": "Giardino Salvi",
         "opening_times": [
             "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00", "00:08:00"
@@ -259,5 +265,64 @@
         "outside": true,
         "with_pets": true,
         "img":"https://upload.wikimedia.org/wikipedia/commons/d/d2/Vicenza_-_La_torre_di_Piazza_Castello_dai_giardini_Salvi.jpg"
+      },
+      {
+        "id": 14,
+        "name": "Osteria Il Cursore",
+        "opening_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+        ],
+        "closing_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+        ],
+        "phone": "0444323504",
+        "price": 10,
+        "durata": 2,
+        "address": "",
+        "notes": "",
+        "category": "restoration",
+        "outside": false,
+        "with_pets": false,
+        "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_584_foto1_fl_ing_584_OsteriaAlCursore.JPG"
       }
+       ,
+       {
+        "id": 15,
+        "name": "Ristorante il ceppo",
+        "opening_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+        ],
+        "closing_times": [
+            "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+        ],
+        "phone": "0444544414",
+        "price": 10,
+        "durata": 2,
+        "address": "",
+        "notes": "",
+        "category": "restoration",
+        "outside": false,
+        "with_pets": false,
+        "img":"https://www.ristoratoridivicenza.it/foto/ristoranti/ING/fl_1381_foto5_66724557_1296425390520434_8696688563942588416_o.jpg"
+      }
+      ,
+      {
+       "id": 16,
+       "name": "Ristorante Da Biasio",
+       "opening_times": [
+           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00"
+       ],
+       "closing_times": [
+           "00:00:00", "00:00:00", "00:00:00", "00:00:00", "00:00:00", "23:59:00", "23:59:00"
+       ],
+       "phone": "0444323363",
+       "price": 10,
+       "durata": 2,
+       "address": "",
+       "notes": "",
+       "category": "restoration",
+       "outside": false,
+       "with_pets": false,
+       "img":"https://media-cdn.tripadvisor.com/media/photo-s/05/b9/fe/71/da-biasio.jpg"
+     }
 ]
