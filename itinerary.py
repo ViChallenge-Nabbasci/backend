@@ -57,7 +57,7 @@ def make_itinerary(prefs: Preferences):
     ]
     ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
 
-    def prepare(hours, duration, restaurantOnly = False):
+    def prepare_internal(hours, duration, restaurantOnly = False):
         locs  = [(x, full_score_of(x)) for x in ok if is_open(x, hours[0], hours[1]) and not x.durata > duration]
         locs  = [ x for x in locs if x[0].category==location.Category.RESTORATION ] if restaurantOnly else locs
         if restaurantOnly:
@@ -66,6 +66,14 @@ def make_itinerary(prefs: Preferences):
             return []
         locs.sort(key = lambda x: x[1], reverse=True)
         return [ x[0] for x in locs[0:min(3, len(locs))] ]
+
+    def prepare(hours, duration, restaurantOnly = False):
+        nonlocal ok
+        l = prepare_internal(hours, duration, restaurantOnly)
+        ok = filter(lambda x: x not in l, ok)
+        #ok = ok2
+        return l
+
 
     launch    = prepare([10, 12], 2, restaurantOnly=True)
     dinner    = prepare([16, 22], 6, restaurantOnly=True)
