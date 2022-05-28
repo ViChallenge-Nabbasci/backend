@@ -2,7 +2,9 @@ from datetime import datetime
 from unicodedata import category
 # from test import Category, locations,current_user
 from pydantic import BaseModel, Field
-from location import *
+import location
+import datetime
+import users
 
 class Preferences(BaseModel):
     byCar: bool
@@ -11,42 +13,62 @@ class Preferences(BaseModel):
     onlyFree: bool
     withPet:bool
     data: datetime.date
-    categories: list[Category]
+    categories: list[location.Category]
 
 class Itinerary(BaseModel):
-    morning: Location
-    lunch: Location
-    afternoon: list[Location]
-    dinner: Location
-    night: Location
+    morning: location.Location
+    lunch: location.Location
+    afternoon: list[location.Location]
+    dinner: location.Location
+    night: location.Location
 
 def make_itinerary(prefs: Preferences):
-    day = prefs.data.get_weekday()
-    myItinerary = Itinerary()
+    day = prefs.data.weekday()
+
 
     filters = [
-        lambda loc: True if prefs.onlyFree else prefs.onlyFree and loc.price == 0,
-        lambda loc: loc.category in prefs.categories,
-        lambda loc: True if prefs.withPet else prefs.withPet and loc.with_pets
+        #lambda loc: True if prefs.onlyFree else prefs.onlyFree and loc.price == 0,
+        #lambda loc: loc.category in prefs.categories,
+        #lambda loc: True if prefs.withPet else prefs.withPet and loc.with_pets
     ]
-    ok = [ loc for loc in locations if all([ f(loc) for f in filters ]) ]
+    ok = [ loc for loc in location.locations if all([ f(loc) for f in filters ]) ]
+
 
     def is_open(loc, start, end):
-        x.opening_times[day].hour <= start and x.closing_times[day].hour >= end
+        #return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
+        return True
     morning   = [x for x in ok if is_open(x, 10, 12) and not x.durata > 2]
     afternoon = [x for x in ok if is_open(x, 12, 18) and not x.durata > 6]
     evening   = [x for x in ok if is_open(x, 18, 22) and not x.durata > 4]
 
-    calc = lambda location: calc_age(current_user,20,40) + calc_likes(location.id) + calc_weather(location)
+    print(len(morning))
+    print(len(afternoon))
+    print(len(evening))
+
+    calc = lambda location: calc_age(users.current_user.age,20,40) + calc_likes(location.id) + calc_weather(location)
     morning = [(x, calc(x)) for x in morning]
     sorted(morning, key=lambda x: x[1], reverse=True)
-    Itinerary.morning = morning[0]
+    morningAct = morning[0]
 
+    afternoon = [(x, calc(x)) for x in afternoon]
+    sorted(afternoon, key=lambda x: x[1], reverse=True)
+    afternoonAct = afternoon[0]
+
+    evening = [(x, calc(x)) for x in evening]
+    sorted(evening, key=lambda x: x[1], reverse=True)
+    eveningAct = evening[0]
+
+    return Itinerary (
+        morning= morningAct[0],
+        lunch= afternoonAct[0],
+        afternoon= [afternoonAct[0]],
+        dinner= afternoonAct[0],
+        night= eveningAct[0]
+    )
 
     # prefs.luoghi
     #restaurant = [x for x in locations if  x.category == Category.RESTORATION]
 
-    return {"response": "like added"}
 
 weights = {
     "age"       : 0.25,
@@ -68,7 +90,7 @@ def calc_age(user_age, lowest, highest):
 def calc_likes(id):
     return 0
 
-def calc_weather():
+def calc_weather(id):
     return 0
 
 #def distance

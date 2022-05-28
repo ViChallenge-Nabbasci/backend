@@ -32,6 +32,7 @@ locations = {}
 likes = {}
 
 def save_likes():
+    global likes
     with open('likes.json', 'w') as fp:
         json.dump(likes, fp)
 
