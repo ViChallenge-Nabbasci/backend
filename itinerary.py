@@ -44,14 +44,17 @@ def full_score_of(loc):
 
 def make_itinerary(prefs: Preferences):
     day = prefs.data.weekday()
-    # visit_time = prefs.time.hour
+    # visit_time = prefs.time.hour 
+    if prefs.lunch or prefs.dinner:
+        prefs.categories.append(location.Category.RESTORATION)
     visit_time = datetime.datetime.now().hour if date.today() == prefs.data else 0
 
     def is_open(loc, start, end):
         return loc.opening_times[day].hour <= start and loc.closing_times[day].hour >= end
 
+    #
     filters = [
-        lambda loc: True if not prefs.onlyFree else loc.price == 0,
+        lambda loc: True if loc.category == location.Category.RESTORATION or not prefs.onlyFree else loc.price == 0,
         lambda loc: loc.category in prefs.categories,
         lambda loc: True if not prefs.withPet else loc.with_pets,
         lambda loc: loc.closing_times[day].hour > visit_time
@@ -77,7 +80,7 @@ def make_itinerary(prefs: Preferences):
 
     morning   = prepare([10, 12], 2)
     afternoon = prepare([12, 18], 6)
-    evening   = prepare([18, 22], 4)
+    evening   = prepare([21, 23], 2)
 
     launch    = prepare([10, 12], 2, restaurantOnly=True)
     dinner    = prepare([16, 22], 6, restaurantOnly=True)
